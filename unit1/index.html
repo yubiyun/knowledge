@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一课</title>
+</head>
+<body>
+    <div></div>
+    <div class="logo"></div>
+    <div id="button"></div>
+    <div>
+        <h1>标题</h1>
+        <h2>标题1</h2>
+        <p>段落</p>
+    </div>
+    <div>
+        <li>项目1</li>
+        <li>项目2</li>
+        <li>项目3</li>
+    </div>
+    <button>确定</button>
+    <button disabled>禁用</button>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>科目</th>
+                    <th>分数</th>
+                    <th>排名</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>数学</td>
+                    <td>88</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>语文</td>
+                    <td>92</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>总计</td>
+                    <td>180</td>
+                    <td>3</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <form action="/login" class="form" method="post">
+        <h2 class="form_title">登录</h2>
+        <div class="form_input">
+            <label for="username">用户名</label>
+            <input id="username" class="form_username" name="username" type="text" required placeholder="输入用户名">
+        </div>
+        <!--以上方法1用label for时,input要加id,以下为方法2
+        <div>
+            <label>用户名<input type="text"></label>
+        </div>
+        -->
+        <div class="form_input">
+            <label for="password">密码</label>
+            <input id="password" class="form_password" name="password" type="password" autofocus placeholder="输入密码">
+        </div>
+    </form>
+    <form action="/login" class="form" method="post">
+        <div class="form_hobby">
+            <input name="hobby" type="checkbox" value="music">音乐
+            <input name="hobby" type="checkbox" value="football">足球
+        </div>
+        <div class="form_sex">
+            <input name="sex" type="radio" value="male">男
+            <input name="sex" type="radio" value="female">女
+        </div>
+        <div class="form_textarea">
+            <textarea name="intro" type="text" cols="30" rows="10" placeholder="个人介绍"></textarea>
+        </div>
+        <img src="" alt="">
+    </form>
+    <select name="city" id="">
+        <option value="beijing">北京</option>
+        <option value="hangzhou" selected>杭州</option>
+    </select>
+    <input type="email" placeholder="email">
+    <input type="file">
+    <input type="date">
+    <input type="time">
+    <input type="time" disabled>
+    <input type="range">
+    <input type="tel">
+    <input type="button" value="确定">
+    <input type="submit" value="提交">
+    <input type="reset" value="重置">
+</body>
