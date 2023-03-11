@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    // var a=1
+    // let b=2
+    // if(true){
+    //     var a=11
+    //     let b=22
+    // }
+    // console.log(a)//11
+    // console.log(b)//2
+
+    // a = 3
+    // var a
+    // {
+    //     var a = 2
+    // }
+    // console.log(a)
+    // //等价于
+    // var a
+    // var a
+    // a = 3
+    // a = 2 
+    // console.log(a)
+
+    // a = 3//报错，在声明前使用
+    // let a 
+    // let a = 2//报错，重复声明
+
+    // let a = 2
+    // {
+    //     let b = 3
+    //     console.log(b)//3
+    // }
+    // console.log(a)//2
+
+
+    // for (let i = 0; i < 3; i++) {
+    //     console.log(i)
+    // }
+    // console.log(i)//报错
+
+    // const a = 1
+    // // a = 2//报错，不能修改const值
+    // const obj = { name: '饥人谷' }
+    // obj.name = 'jirengu'
+    // console.log(obj)//{name:'jirengu'}
+
+    // const arr = [1, 2, 3]
+    // arr[0] = 2
+    // console.log(arr)//[2,2,3]
+
+    // const arr2 = []
+    // arr2 = []
+    // console.log(arr2)//报错，地址变了
+
+    //     a = 3
+    //     console.log(a)//3
+    //     var a
+    //     function doSomething() {
+    //         console.log(b)//undefined
+    //         var b = 10
+    //         console.log(b)//10
+    //     }
+    //     doSomething()
+    // //等价于
+    //     var a
+    //     function doSomething() {
+    //         var b
+    //         console.log(b)
+    //         b = 10
+    //         console.log(b)
+    //     }
+    //     a = 3
+    //     console.log(a)
+    //     doSomething()
+
+    // fn()
+    // function fn() {
+    //     console.log('Hello jirengu.com')
+    // }
+
+    // fn2()
+    // const fn2 = function () {
+    //     console.log('fn2')
+    // }
+
+    // function fn(){
+    //     console.log(a)
+    // }
+    // fn()
+
+    // function fn(){
+    //     let a = 1
+    //     console.log(a)
+    // }
+    // fn()
+    // console.log(a)
+
+    // let a = 1
+    // function fn(){
+    //     console.log(a)
+    // }
+    // fn()
+
+    // function foo(){
+    //     console.log('foo')//'foo'
+    //     bar()
+    // }
+    // function bar(){
+    //     console.log('bar')//'bar'
+    // }
+    // foo()
+
+    // let a = 0
+    // function foo(){
+    //     let a = 1
+    //     bar()
+    // }
+    // function bar(){
+    //     console.log(a)//0
+    // }
+    // foo()
+
+    // let a = 0
+    // function foo(){
+    //     let a = 1
+    //     bar()
+    //     function bar(){
+    //         console.log(a)//1
+    //     }
+    // }
+    // foo()
+
+
+    // function foo(){
+    //     let a = 1
+    //     bar()
+    // }
+    // function bar(){
+    //     console.log(a)//0
+    // }
+    // let a = 0
+    // foo()
+
+    // let a = 0
+    // function foo(){
+    //     bar()
+    //     var a = 1
+    //     function bar(){
+    //         console.log(a)
+    //     }
+    // }
+    // foo()
+
+    // let a = 0
+    // function foo(){
+    //     bar()
+    //     let a = 1
+    //     function bar(){
+    //         console.log(a)
+    //     }
+    // }
+    // foo()
+
+    // let a = 0
+    // function foo(){
+    //     bar()
+    //     a = 1
+    //     function bar(){
+    //         console.log(a)
+    //     }
+    // }
+    // foo()
+    // console.log(a)
+
+    // var a = 1
+    // function fn1() {
+    //     function fn2() {
+    //         console.log(a)
+    //     }
+    //     function fn3() {
+    //         var a = 4
+    //         fn2()
+    //     }
+    //     var a = 2
+    //     return fn3
+    // }
+    // var fn = fn1()
+    // fn()
+
+    // var a = 1
+    // function fn1() {
+    //     function fn3() {
+    //         var a = 4
+    //         fn2()
+    //     }
+    //     var a = 2
+    //     return fn3
+    // }
+    // function fn2() {
+    //     console.log(a)
+    // }
+
+    // var fn = fn1()
+    // fn()
+
+    var a = 1
+    function fn1() {
+        function fn3() {
+            function fn2() {
+                console.log(a)
+            }
+            fn2()
+            var a = 4
+        }
+        var a = 2
+        return fn3
+    }
+    function fn2() {
+        console.log(a)
+    }
+
+    var fn = fn1()
+    fn()
+
+</script>

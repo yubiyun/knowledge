@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<!-- <script>
+    let inputVal = prompt("请输入分数")
+    if(parseInt(inputVal)>=80){
+        console.log('优秀')
+    }else{
+        console.log('继续加油')
+    }
+</script> -->
+<!-- <input type="text">
+<div id="message"></div>
+
+<script>
+    let $input=document.querySelector('input')
+    let $message=document.querySelector('#message')
+    $input.oninput=function(){
+        let num=parseInt($input.value)
+        if(num>=80){
+            $message.innerText='优秀'
+        }else{
+            $message.innerText='继续加油'
+        }
+    }
+</script> -->
+
+<!-- <input type="text">
+<div id="message"></div>
+
+<script>
+    let $input=document.querySelector('input')
+    let $message=document.querySelector('#message')
+    $input.oninput=function(){
+        let num=parseInt($input.value)
+        if(num>=80){
+            $message.innerText='优秀'
+        }else{
+            $message.innerText='继续加油'
+        }
+    }
+</script> -->
+
+<!-- <script>
+    let wordColor = 'yellow'
+    let hexColor
+    switch (wordColor) {
+        case 'red':
+            hexColor = '#f00'
+            break;
+        case 'blue':
+            hexColor = '#0f0'
+            break;
+        case 'yellow':
+        case 'white':
+            hexColor = '#fff'
+            break;
+        default:
+            hexColor = '#000'
+    }
+    console.log(hexColor)
+</script> -->
+
+<!-- <style>
+    .circle {
+        width: 100px;
+        height: 100px;
+        border: 1px solid pink;
+        border-radius: 50%;
+    }
+</style>
+
+<label>颜色选择:
+    <select>
+        <option value="red">红</option>
+        <option value="yellow">黄</option>
+        <option value="blue">蓝</option>
+        <option value="white">白</option>
+        <option value="other">其他</option>
+    </select>
+</label>
+<div class="circle"></div>
+
+<script>
+    let $circle = document.querySelector('.circle')
+    let $select = document.querySelector('select')
+    $select.onchange = function () {
+        let wordColor = $select.value
+        let hexColor
+        switch (wordColor) {
+            case 'red':
+                hexColor = '#f00'
+                break
+            case 'blue':
+                hexColor = '#0f0'
+                break
+            case 'yellow':
+            case 'white':
+                hexColor = '#fff'
+                break
+            default:
+                hexColor = '#000'
+        }
+        console.log(hexColor)
+        console.log($circle)
+        $circle.style.backgroundColor = hexColor
+    }
+</script> -->
+
+<!-- <script>
+    for(let i=0;i<3;i++){
+        console.log(i)
+    }
+</script> -->
+<!-- 
+<script>
+let obj = {
+    name:'小明',
+    age:20,
+    sex:'男'
+}
+for(let key in obj){
+    console.log(key,obj[key])
+    console.log(`${key}:${obj[key]}`)
+}
+</script> -->
+<!-- 
+// <script>
+//     let str = ''
+//     for(let char of 'hello'){
+//         str+=char+char
+//     }
+//     console.log(str)
+// </script>//hheelllloo -->
+
+<!-- <script>
+    for (let i = 0; i < 10; i++) {
+        if (i % 2 === 0) {
+            continue
+        }
+        console.log(i)//1 3 5 7 9
+    }
+</script> -->
+
+<!-- <script>
+    for (let i = 9; i < 10; i--) {
+        console.log(i)//9 8
+        if (i % 2 === 0) {
+            break
+        }
+    }
+</script> -->
+
+<!-- <script>
+    let i=0
+    while(i<10){
+        console.log(i)//0 1 2 3 4 5 6 7 8 9
+        i++
+    }
+</script> -->
+
+<!-- <script>
+    let i=0
+    do {
+        console.log(i)//0 1 2 3 4 5 6 7 8 9
+        i++
+    }while(i<10)
+</script> -->
+
+<!--平方和 <script>
+    let arr = [2,3,-2,2,6]
+    let sumofSquare = 0
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>0){
+            sumofSquare =sumofSquare + arr[i]**2
+        }
+        console.log(sumofSquare)
+    }
+</script> -->
+
+<!-- <script>
+    function sum(num1, num2) {
+        let result = num1 + num2
+        return result
+    }
+    let num1 = sum(1, 2)
+    console.log(num1)//3
+    let num2 = sum(3, 4)
+    console.log(num2)//7
+</script> -->
+
+<!-- <script>
+    // function sayHello(name) {
+    //     console.log('hello' + name)
+    // }
+    // sayHello('饥人谷')
+
+    const sayHello = function (name) {
+        console.log('hello' + name)
+    }
+    sayHello('饥人谷')
+</script> -->
+
+<!-- <script>
+    function sum(a,b){
+        return a+b
+    }
+    const sum=function(a,b){
+        return a+b
+    }
+    const sum = (a, b) => a + b
+    console.log(sum(1, 2))
+
+    const inc=n=>++n
+    console.log(inc(1))
+
+    const createPet = name => ({ name: name })
+    console.log(createPet('dog'))//{name:'dog'}
+
+    const sum = a => b => a + b
+    console.log(sum(1)(2))//3
+
+    function sum(a) {
+        return function(b) {
+            return a + b
+        }
+    }
+    console.log(sum(1)(2))//3
+</script> -->
+
+<!-- <script>
+    function count(str) {
+        let obj = {}
+        for (let char of str) {
+            if (obj[char] !== ' ') {
+                if (obj[char] === undefined) {
+                    obj[char] = 1
+                } else {
+                    obj[char]++
+                }
+            }
+        }
+        return obj
+    }
+    let str = 'hello world'
+    let obj = count(str)
+    console.log(obj)
+</script> -->
+
+<!-- <script>
+    function toBase(str) {
+        let val = 0
+        for (let i = 0; i < str.length; i++) {
+            val += parseInt(str[i], 10) * 2 ** (str.length - 1 - i)
+        }
+        return val
+    }
+    console.log(toBase('11000000'))
+</script> -->
+
+<!-- <script>
+    function getRandIp() {
+        const getRandNum = () => Math.floor(Math.random() * 256)
+        return `${getRandNum()}.${getRandNum()}.${getRandNum()}.${getRandNum()}`
+    }
+    console.log(getRandIp())
+    function randomColor() {
+        //#fa0934
+        let dict = '0123456789abcdef'
+        const randCh = () => dict[Math.floor(Math.random() * dict.length)]
+        return `#${randCh()}${randCh()}${randCh()}${randCh()}${randCh()}${randCh()}`
+    }
+    console.log(randomColor())
+
+    const randomColor2 = () =>
+        '#' + [0, 0, 0, 0, 0, 0].map(v => ('0123456789abcdef')
+        [Math.floor(Math.random() * 16)]).join('')
+    console.log(randomColor2())
+</script> -->
+
+<script>
+    function generate(n) {
+        if (n < 1) return []
+        let arr = [[1]]
+        for (let i = 1; i < n; i++) {
+            arr[i] = []
+            for (let j = 0; j < i + 1; j++) {
+                arr[i][j] = (arr[i - 1][j - 1] || 0) + (arr[i - 1][j] || 0)
+            }
+        }
+        return arr
+    }
+    console.log(generate(5))
+</script>

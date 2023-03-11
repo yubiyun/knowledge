@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // let reg = new RegExp('hello')
+    // console.log(reg.test('hello jirengu'))//true
+
+    // let str = 'hello1 jirengu, hello2 world'
+    // console.log(str.search(/hello\d/))//0
+    // console.log(str.match(/hello\d/g))//['hello1', 'hello2']
+    // console.log(str.replace(/hello\d/g,'hi'))//'hi jirengu, hi world'
+    // console.log(str.split(/\s/))//根据空格 ['hello1', 'jirengu,', 'hello2', 'world']
+
+    // let reg = /jirengu/
+    // console.log(reg.test('hello jirengu'))//true
+
+    // let reg1 = /#[0-9a-f][0-9a-f][0-9a-f]/
+    // console.log(reg1.test('x#9a4x'))//true
+    // console.log(reg1.test('x#1jbx'))//false
+
+    // let reg2 = /b[oO][oO]k/
+    // console.log(reg2.test('book'))//true
+    // console.log(reg2.test('boOk'))//true
+    // console.log(reg2.test('BoOk'))//false
+
+    // let reg3 = /[^do]/
+    // console.log(reg3.test('B4k6'))//true
+    // console.log(reg3.test('o'))//false
+    // console.log(reg3.test('ok'))//true
+
+    // console.log(/\[hello\]/.test('[hello]'))//true
+
+    // let str = 'he-llo jirengu_12, hel_lo w9orLd'
+    // let arr = str.split(/\s/)
+    // console.log(arr)//['he-llo', 'jirengu_12,', 'hel_lo', 'w9orLd']
+    // let arr1 = str.split(/\W/).filter(v=>v!=='')
+    // console.log(arr1)//['he', 'llo', 'jirengu_12',  'hel_lo', 'w9orLd']
+    // let arr2 = str.replace(/\s/g,'')
+    // console.log(arr2)//'he-llojirengu_12,hel_low9orLd'
+
+    // let reg = /\d{11}/
+    // console.log(reg.test('12345678901'))//true
+    // let reg1 = /\d{2,4}/
+    // console.log(reg1.test('1234'))//true
+    // console.log(reg1.test('1234890'))//true 到第2位就返回值
+    // let reg2 = /https?:\/\/.+/
+    // console.log(reg2.test('https://1'))//true
+    // console.log(reg2.test('http://123.com'))//true
+    // console.log(reg2.test('http://'))//false
+    // console.log(reg2.test('https//1'))//false
+
+    // let str = 'hello1 world hello2 123456 ruoyu hello3'
+    // console.log(str.match(/hello\d/g))//['hello1', 'hello2', 'hello3']
+    // console.log(str.match(/^hello\d/g))//['hello1']
+    // console.log(str.match(/hello\d$/g))//['hello3']
+
+    // let str1 = 'hello1 whello9orld hello2 12-hello8-3456 jirengu  ruoyu hello3'
+    // console.log(str1.match(/\bhello\d\b/g))//['hello1', 'hello2', 'hello8', 'hello3']
+
+    // let str = /^1\d{10}$/
+    // console.log(str.test('12345678910'))//true
+    // console.log(str.test('1234567890'))//false
+    // console.log(str.test('1234567891a'))//false
+    // console.log(str.test('22345678910'))//false
+
+    // let str = '123456789'
+    // let reg1 = /\d{3,5}/g
+    // console.log(str.match(reg1))//['12345', '6789']
+    // let reg2 = /\d{3,5}?/g
+    // console.log(str.match(reg2))//['123', '456', '789']
+
+    // let str1 = '1234567890'
+    // console.log(str1.match(reg2))//['123', '456', '789']
+
+    // const text = '图片的尺寸是1440x900'
+    // const reg = /(\d+)x(\d+)/
+    // console.log(text.match(reg))
+
+    // const match = text.match(reg)
+    // console.log(match[1],match[2])//1440 900
+
+    // let [all,width,height] = text.match(reg)
+    // console.log(width,height)//1440 900
+
+    // const text = '图片1的尺寸是1440x900,图片2的尺寸是800x600'
+    // const reg = /(\d+)x(\d+)/g
+    // console.log(text.match(reg))
+    // const match = text.matchAll(reg)
+    // console.log([...match])
+
+    // let str = `<div>
+    //     <link rel="stylesheet" href="http://jirengu.com/style.css">
+    //     <a title="百度" href="https://baidu.com">百度</a>
+    //     <a href="http://jirengu.com" target="_blank">饥人谷</a>
+    //     </div>`
+    // let reg = /<a.+?href="(.+?)"/g
+    // let arr = [...str.matchAll(reg)]
+    // console.log(arr)
+    // let urls = arr.map(arr=>arr[1])
+    // console.log(urls)//['https://baidu.com', 'http://jirengu.com']
+
+    let str = `
+    let a = 1 
+    let b = 2 
+    console.log(a+b)      
+    `
+    let str2 = str.replace(/(.) *\n/g,'$1;\n')
+    console.log(str2)
+
+</script>

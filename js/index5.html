@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // let obj= {a:1,b:2,1:1}
+    // // console.log(obj)//{1: 1, a: 1, b: 2}
+    // let a = {}
+    // obj[a] = 2
+    // console.log(obj)//{1: 1, a: 1, b: 2, [object Object]: 2}
+    // //obj[a] = 2 => {a:2},又a = {},将对象强制转化为数组[object object]
+    // obj[a] = 3
+    // console.log(obj)//{1: 1, a: 1, b: 2, [object Object]: 3}
+
+    // let sym1 = Symbol()
+    // obj[sym1] = 100
+    // let sym2 = Symbol()
+    // obj[sym2] = 200
+    // console.log(obj)//{1: 1, a: 1, b: 2, [object Object]: 3, Symbol(): 100, Symbol(): 200}
+    // console.log(obj[sym1])//100
+    // console.log(obj[sym2])//200
+
+    // console.log(sym1===sym2)//false
+    
+    // let set = new Set()
+    // set.add(1)
+    // set.add(2)
+    // console.log(set)//{1,2}
+    // set.add(2)
+    // console.log(set)//{1,2},不重复
+    // set.add(3)
+    // set.delete(2)
+    // console.log(set)//{1,3}
+    // console.log(set.size)//2
+    // set.clear(set)
+    // console.log(set)//{size:0}
+    // set.add({a:1})
+    // set.add(3)
+    // set.forEach(v=>{
+    //     console.log(v)//{a:1} 3
+    // })
+    
+    // console.log(new Set('abc'))// {'a', 'b', 'c'}
+
+    // let arr =[3,3,'d',6,7,'p',9,'o','p','6']
+    // let result = [...new Set(arr)]//数组去重
+    // console.log(result)//[3, 'd', 6, 7, 'p', 9, 'o', '6']
+    
+    // let arr1 =[3,3,'d',6,7,'p',9,'o','p','6']
+    // const remove = arr => {
+    //     let set = new Set()
+    //     for(let i = 0;i<arr.length;i++){
+    //         if(!set.has(arr[i])){
+    //             set.add(arr[i])
+    //         }else{
+    //             arr.splice(i,1)
+    //             i--
+    //         }
+    //     }
+    // }
+    // remove(arr1)
+    // console.log(arr1)//[3, 'd', 6, 7, 'p', 9, 'o', '6']
+
+    // let m = new Map()
+    // m.set('a',1)
+    // console.log(m)//{'a' => 1}
+    // m.set(1,2)
+    // m.set(3,'b')
+    // console.log(m)//{'a' => 1, 1 => 2, 3 => 'b'}
+    // m.delete(1)
+    // console.log(m)// {'a' => 1, 3 => 'b'}
+    // let arr = []
+    // m.set(arr,[6,7,8])
+    // console.log(m)//{'a' => 1, 3 => 'b', Array(0) => Array(3)}
+    // console.log(m.size)//3
+    // console.log(m.get('a'))//1
+    // console.log(m.get(arr))//[6,7,8]
+    // m.forEach((v,k)=> {
+    //     console.log(k,v)
+    // })//'a' 1 3 'b' [] [6,7,8]
+    // let obj = {c:9}
+    // m.set(obj,0)
+    // console.log(m)//{'a' => 1, 3 => 'b', Array(0) => Array(3), Object => 0}
+    // for (let [k,v] of m){
+    //     console.log(k,v)//'a' 1 3 'b' [] [6,7,8] {c:9} 0
+    // }
+
+    // let wm1 = new WeakMap()
+    // const o1 = {},
+    //     o2 = function () { },
+    //     o3 = []
+    // wm1.set(o1, 1)
+    //  wm1.set(o2, o3)
+    // console.log(wm1.get(o1))//1
+    // console.log(wm1.get(o2))//[]
+
+</script>
