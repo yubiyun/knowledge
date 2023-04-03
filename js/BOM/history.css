@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+  }
+  section {
+    height: 100vh;
+    display: none;
+  }
+  section:nth-child(odd) {
+    background-color: blueviolet;
+  }
+  .show {
+    display: block;
+  }
