@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        max-width: 500px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      .wrap li {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        color: #666;
+        border-bottom: 1px solid #f2f2f2;
+      }
+
+      .wrap .text {
+        flex: 1;
+      }
+
+      .wrap .del {
+        cursor: pointer;
+        padding: 6px;
+      }
+
+      footer {
+        display: flex;
+        max-width: 500px;
+        margin: 20px auto;
+      }
+
+      footer .input {
+        flex:1;
+        margin-right: 10px;
+        border: none;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="wrap">
+      <li><span class="text">项目1</span><span class="del">x</span></li>
+      <li><span class="text">项目2</span><span class="del">x</span></li>
+      <li><span class="text">项目3</span><span class="del">x</span></li>
+    </ul>
+    <footer>
+        <input class="input" type="text"><button class="add">添加</button>
+    </footer>
+    <script>
+        const $ = s => document.querySelector(s)
+        const $$ = s => document.querySelectorAll(s)
+
+        $('.add').addEventListener('click',function(){
+            const $text = document.createElement('span')
+            $text.classList.add('text')
+            $text.append($('.input').value)
+            const $del = document.createElement('span')
+            $del.classList.add('del')
+            $del.append('x')
+            const $li = document.createElement('li')
+            $li.append($text,$del)
+            $('.wrap').append($li)
+        })
+
+        // $$('.del').forEach($del => {
+        //     $del.addEventListener('click',function(){
+        //         this.parentElement.remove()
+        //     })      
+        // })
+
+        $('.wrap').addEventListener('click',function(e){
+            if(e.target.classList.contains('del')){
+                e.target.parentElement.remove()
+            }  
+        })
+    </script>
+  </body>
+</html>

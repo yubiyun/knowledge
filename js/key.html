@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .status span {
+        border: 1px solid #000;
+      }
+
+      .active {
+        color: #fff;
+        background-color: #000;
+      }
+
+      .text {
+        border: 1px solid #ccc;
+        padding: 1px;
+        min-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="status">
+      <span class="ctrl">control</span> <span class="meta">command</span>
+    </div>
+    <pre class="text"></pre>
+    <script>
+      const $ = (s) => document.querySelector(s);
+      document.addEventListener("keydown", function (e) {
+        console.log(e);
+        e.preventDefault();
+        switch (e.key) {
+          case "Backspace":
+            $(".text").innerText = $(".text").innerText.slice(0, -1);
+            break;
+          case "Enter":
+            $(".text").append("\n");
+            break;
+          default:
+            e.key.length === 1 && $(".text").append(e.key);
+            e.ctrlKey && $(".ctrl").classList.add("active");
+            e.metaKey && $(".meta").classList.add("active");
+            break;
+        }
+      });
+
+      document.addEventListener("keyup", (e) => {
+        $(".ctrl").classList.remove("active");
+        $(".meta").classList.remove("active");
+      });
+    </script>
+  </body>
+</html>

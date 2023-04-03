@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .com-tab {
+        border: 1px solid #ccc;
+      }
+
+      .com-tab ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .com-tab .header {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .com-tab .tab {
+        padding: 4px 0;
+        margin-right: 20px;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+      }
+
+      .com-tab .tab.active {
+        color: blue;
+        border-bottom: 1px solid currentColor;
+      }
+
+      .com-tab .panel {
+        padding: 12px;
+        display: none;
+      }
+
+      .com-tab .panel.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="com-tab">
+      <ul class="header">
+        <li class="tab">用户管理</li>
+        <li class="tab">配置管理</li>
+        <li class="tab">角色管理</li>
+      </ul>
+      <ul class="content">
+        <li class="panel">用户管理的内容</li>
+        <li class="panel">配置管理的内容</li>
+        <li class="panel">角色管理的内容</li>
+      </ul>
+    </div>
+
+    <script>
+      const qS = (s) => document.querySelector(s);
+      const qSA = (s) => document.querySelectorAll(s);
+
+      qSA(".tab").forEach(($tab) => {
+        $tab.onclick = function () {
+          qSA(".tab").forEach(($tab) => $tab.classList.remove("active"));
+          this.classList.add("active");
+          let index = [...qSA(".tab")].indexOf(this);
+          qSA(".panel").forEach(($tab) => $tab.classList.remove("active"));
+          qSA(".panel")[index].classList.add("active");
+        };
+      });
+    </script>
+  </body>
+</html>

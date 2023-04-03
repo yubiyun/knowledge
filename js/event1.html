@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+        .box {
+            border: 1px solid #666;
+        }
+        body {
+            border: 1px solid #666;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style> -->
+
+    <!-- <style>
+      .box {
+        background-color: aquamarine;
+        padding: 20px;
+        width: 80px;
+        text-align: center;
+        transform: translateX(-110%);
+        transition: all 0.3s;
+      }
+      .box.show {
+        transform: translateX(0);
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <script>
+        const $ = s => document.querySelector(s)
+        $('.box1').onclick = function(){
+            console.log(1)
+        }
+        $('.box1').onclick = function(){
+            console.log(11)
+        }
+        $('.box2').addEventListener('click',function(){
+            console.log(4)
+        })
+        $('.box2').addEventListener('click',function(){
+            console.log(20)
+        })
+    </script> -->
+
+    <!-- <button>button</button>
+    <script>
+      const $btn = document.querySelector("button");
+      $btn.onclick = function (e) {
+        console.log(e);//事件对象
+        console.log(this);//this代表$btn
+      };
+      $btn.addEventListener("click", function (e) {
+        console.log(e);//事件对象
+        console.log(this);//this代表$btn
+      });
+      $btn.onclick = (e) => {
+        console.log(e);//事件对象
+        console.log(this);//this代表函数外面的this,此处为window
+      };
+      $btn.addEventListener("click", (e) => {
+        console.log(e);//事件对象
+        console.log(this);//this代表函数外面的this,此处为window
+      });
+    </script> -->
+
+    <!-- <button class="once">once</button>
+    <button class="everytime">everytime</button> -->
+
+    <!-- <script>
+      const $ = (s) => document.querySelector(s);
+      $(".everytime").addEventListener(
+        "click",
+        function () {
+          console.log("everytime");
+        },
+        { once: false }
+      );
+      $(".once").addEventListener(
+        "click",
+        function () {
+          console.log("once");
+        },
+        { once: true }
+      );
+    </script> -->
+
+    <!-- <script>
+      const $ = (s) => document.querySelector(s);
+      function handle() {
+        console.log("hi");
+      }
+      $(".everytime").addEventListener("click", handle, { once: false });
+      $(".everytime").removeEventListener("click", handle);//解绑事件
+    </script> -->
+
+    <!-- <div class="box">box</div>
+    <script>
+        const $ = (s) => document.querySelector(s);
+        $('.box').addEventListener('click',function(e){
+            console.log('box',this,e.target)
+        })
+        $('body').addEventListener('click',function(e){
+            console.log('body',this,e.target)
+        })
+        document.addEventListener('click',function(e){
+            console.log('document',this,e.target)
+        })
+    </script> -->
+
+    <!-- <button class="open">open</button>
+    <div class="box">box</div>
+    <script>
+      const $ = (s) => document.querySelector(s);
+      $(".open").addEventListener("click", function (e) {
+        $(".box").classList.add("show");
+        e.stopPropagation();
+      });
+      $(".box").addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+      document.addEventListener("click", function () {
+        $(".box").classList.remove("show");
+      });
+    </script> -->
+
+    <a href="https://jirengu.com">jirengu.com</a>
+    <a href="https://baidu.com">baidu.com</a>
+
+    <script>
+      document.querySelectorAll("a").forEach(($a) => {
+        $a.addEventListener("click", function (e) {
+          let href = $a.getAttribute("href");
+          if (!href.includes("jirengu")) {
+            e.preventDefault();
+            if (confirm("确定吗")) {
+              location.href = href;
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

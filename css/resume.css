@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/1.5 Arial, Helvetica, sans-serif;
+  color: #666;
+  background-color: #ebebeb;
+}
+
+header {
+  background-color: #2f2f2f;
+  text-align: center;
+}
+
+header h1 {
+  color: #e2e2e2;
+  padding-top: 10px;
+}
+
+h2 {
+  color: #6a97bb;
+  font-size: 14px;
+}
+
+header ul {
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+header li {
+  margin-left: 20px;
+}
+
+#content {
+  display: flex;
+}
+
+aside {
+  width: 240px;
+  padding: 18px;
+  background-color: #fff;
+}
+
+aside .avatar {
+  width: 100px;
+  height: 100px;
+  margin: -70px auto 20px auto;
+  background-color: #c1c1c1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+aside img {
+  height: 100%;
+  width: 100%;
+}
+
+section {
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+  font-size: 12px;
+}
+
+section li {
+  display: flex;
+}
+
+section .key {
+  width: 85px;
+}
+section a {
+  margin-left: 20px;
+  color: #6a97bb;
+}
+
+section .bar {
+  flex: 1;
+  background-color: #aaa;
+  height: 3px;
+}
+
+section .progress {
+  display: block;
+  height: 3px;
+  background-color: #000;
+}
+
+main {
+  background-color: #fff;
+  order: 2;
+  flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  #content {
+    flex-direction: column;
+  }
+}

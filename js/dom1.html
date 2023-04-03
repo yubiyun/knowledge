@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="dom1">dom1</div>
+    <div class="dom2">dom2</div>
+    <button class="swap">swap</button>
+
+    <script>
+      const $ = (s) => document.querySelector(s);
+
+      $(".swap").onclick = function () {
+        swap($(".dom1"), $(".dom2"));
+      };
+
+      function swap($node1, $node2) {
+        if ($node2.previousSibling) {
+          let $pre = $node2.previousSibling;
+          $node1.before($node2);
+          $pre.after($node1);
+        } else if ($node2.nextSibling) {
+          let $next = $node2.nextSibling;
+          $node1.after($node2);
+          $next.before($node1);
+        }
+      }
+    </script>
+  </body>
+</html>

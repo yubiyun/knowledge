@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: aquamarine;
+            width: 100px;
+            height: 100px;
+        }
+        .active{
+            background-color: blueviolet;
+            color: aliceblue;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="old">old</div>
+    <button class="btn">click</button>
+    <div class="new">new</div>
+
+    <script>
+        const $ = s => document.querySelector(s)
+
+        $('.btn').onclick = function(){
+            // let $new = document.createElement('div')
+            // $new.append('new')
+            // $('.old').before($('.new'))
+            $('.old').replaceWith($('.new'))
+            $('.new').remove()
+                }
+    </script> -->
+
+    <!-- <button class="plus">+</button>
+    <button class="minus">-</button>
+    <div class="box">box</div>
+    <button class="link">link</button> -->
+<!-- 
+    <script>
+        const $ = (s) => document.querySelector(s);
+        $(".box").style.color = "#fac";
+        $(".box").style.backgroundColor = "#ccc";
+        $(".plus").onclick = function () {
+          let fontSize = parseInt(getComputedStyle($(".box")).fontSize);
+          fontSize += 2;
+          $(".box").style.fontSize = fontSize + "px";
+        };
+        $(".minus").onclick = function () {
+          let fontSize = parseInt(getComputedStyle($(".box")).fontSize);
+          fontSize -= 2;
+          $(".box").style.fontSize = fontSize + "px";
+        };
+
+      const $ = (s) => document.querySelector(s);
+      $(".link").onclick = function () {
+        let $link = document.createElement("a");
+        $link.setAttribute("href", "http://jirengu.com");
+        $link.setAttribute("target", "_blank");
+        $link.click();
+      };
+    </script> -->
+
+    <div class="box active">box</div>
+    <button class="btn">click</button>
+
+    <script>
+        const $ = s => document.querySelector(s)
+        $('.btn').onclick = function(){
+            $('.box').classList.toggle('active')
+        }
+    </script>
+  </body>
+</html>

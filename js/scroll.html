@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: bisque;
+            height: 100px;
+            overflow-y: scroll; /*y轴滚动 :auto代表内容超过高度后自动出现滚轴*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+    </div>
+    <script>
+        const $box = document.querySelector('.box')
+        $box.onscroll=function(){
+            console.log('box scroll')//滚动时打印
+            console.log($box.scrollTop)//滚动距离
+        }
+        $box.scrollTo({top:100,behavior:"smooth"})//平滑滚动到100，不打印
+        $box.scrollBy(0,20)//现有状态下滚动20
+    </script>
+</body>
+</html>
