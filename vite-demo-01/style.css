@@ -1,0 +1,7 @@
+body {
+  font-size: 38px;
+  color: black;
+}
+input,button{
+  font:inherit
+}
