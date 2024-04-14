@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <span class="left">x</span>
+      <span>*</span>
+      <span class="right">y</span>
+      <span>=</span>
+      <span class="result">z</span>
+    </div>
+    <button class="hold">获取xy</button>
+    <button class="count">计算</button>
+    <script>
+        const $ = s => document.querySelector(s)
+        let x = 0, y = 0
+        $('.hold').addEventListener('click',function(){
+            x = Math.floor(Math.random()*9+1)
+            y = Math.floor(Math.random()*9+1)
+            $('.left').innerText = x
+            $('.right').innerText = y
+            $('.result').innerText = '?'
+        })
+        $('.count').addEventListener('click',function(){
+            $('.result').innerText = x*y
+        })
+    </script>
+  </body>
+</html>

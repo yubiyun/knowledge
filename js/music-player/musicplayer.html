@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>播放器</title>
+    <script src="https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/svg_24347_8.f881807d211b50a1773819445f32ec41.js"></script>
+    <style>
+      .player .cover {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+      }
+
+      .player .cover::after {
+        content: "";
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .player .panel {
+        position: fixed;
+        left: 20px;
+        right: 20px;
+        height: 150px;
+        bottom: 70px;
+        padding: 32px;
+        border-radius: 24px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+      }
+
+      .player .title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .player .author {
+        font-size: 14px;
+        margin-top: 12px;
+      }
+
+      .player .bar-container {
+        height: 6px;
+        border-radius: 3px;
+        background-color: #3a3a3a;
+        margin-top: 16px;
+      }
+
+      .player .bar {
+        position: relative;
+        width: 0;
+        height: 100%;
+        border-radius: 3px;
+        background-color: #fff;
+        /* transition: all 1s linear; */
+      }
+
+      .player .bar .circle {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -6px;
+        right: -8px;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+      .player .duration {
+        display: flex;
+        font-size: 12px;
+        margin-top: 6px;
+      }
+
+      .player .total {
+        margin-left: auto;
+      }
+
+      .iconpark-icon {
+        width: 1.8em;
+        height: 1.8em;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .iconpark-icon:hover {
+        opacity: 0.7;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .player .control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .icon-play,
+      .icon-pause {
+        width: 3em;
+        height: 3em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="player">
+        <div
+          class="cover"
+          style="background-image: url(./assets/真的吗.jpg)"
+        ></div>
+        <div class="panel">
+          <div class="title">真的吗</div>
+          <div class="author">莫文蔚</div>
+          <div class="progress">
+            <div class="bar-container">
+              <div class="bar" style="width: 0">
+                <span class="circle"></span>
+              </div>
+            </div>
+            <div class="duration">
+              <span class="current">1:30</span>
+              <span class="total">4:50</span>
+            </div>
+          </div>
+          <div class="control">
+            <svg class="iconpark-icon icon-cycle">
+              <use href="#play-cycle"></use>
+            </svg>
+            <svg class="iconpark-icon icon-once hide">
+              <use href="#play-once"></use>
+            </svg>
+            <svg class="iconpark-icon icon-shuffle hide">
+              <use href="#shuffle-one"></use>
+            </svg>
+            <svg class="iconpark-icon icon-pre">
+              <use href="#go-start"></use>
+            </svg>
+            <svg class="iconpark-icon icon-pause hide">
+              <use href="#pause-one"></use>
+            </svg>
+            <svg class="iconpark-icon icon-play"><use href="#play"></use></svg>
+            <svg class="iconpark-icon icon-next">
+              <use href="#go-end"></use>
+            </svg>
+            <svg class="iconpark-icon icon-menu">
+              <use href="#application-menu"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="list"></div>
+    </div>
+    <script>
+      const list = [
+        {
+          id: "0",
+          title: "真的吗",
+          author: "莫文蔚",
+          albumn: "我要说I Say",
+          lyric: "./assets/lyric_真的吗.json",
+          url: "./assets/莫文蔚-真的吗.mp3",
+          cover: "./assets/真的吗.jpg",
+        },
+
+        {
+          id: "1",
+          title: "水星记",
+          author: "郭顶",
+          albumn: "飞行器的执行周期",
+          lyric: "./assets/lyric_水星记.json",
+          url: "./assets/水星记.mp3",
+          cover: "./assets/水星记.jpg",
+        },
+        {
+          id: "2",
+          title: "后来的我们",
+          author: "五月天",
+          albumn: "后来的我们",
+          lyric: "./assets/lyric_后来的我们.json",
+          url: "./assets/后来的我们.mp3",
+          cover: "./assets/后来的我们.jpg",
+        },
+        {
+          id: "3",
+          title: "假装",
+          author: "陈雪凝",
+          albumn: "拾陆",
+          lyric: "./assets/lyric_假装.json",
+          url: "./assets/假装.mp3",
+          cover: "./assets/假装.jpg",
+        },
+        {
+          id: "4",
+          title: "烦恼歌",
+          author: "张学友",
+          albumn: "在你身边",
+          lyric: "./assets/lyric_烦恼歌.json",
+          url: "./assets/烦恼歌.mp3",
+          cover: "./assets/烦恼歌.jpg",
+        },
+      ];
+
+      const $ = (s) => document.querySelector(s);
+      const $playIcon = $(".icon-play");
+      const $pauseIcon = $(".icon-pause");
+      const $title = $(".title");
+      const $author = $(".author");
+      const $cover = $(".cover");
+      const $current = $(".current");
+      const $total = $(".total");
+      const $bar = $(".bar");
+      const $preIcon = $(".icon-pre");
+      const $nextIcon = $(".icon-next");
+      const $barContainer = $(".bar-container");
+      const $circle = $(".bar-container .circle");
+      const $panel = $(".panel");
+
+      let clock = null;
+      let index = 0;
+
+      const audioObject = new Audio();
+
+      setAudio(index);
+
+      $playIcon.onclick = function () {
+        audioObject.play();
+        this.classList.add("hide");
+        $pauseIcon.classList.remove("hide");
+        clock = setInterval(() => {
+          $current.innerText = secondToStr(audioObject.currentTime);
+          $bar.style.width =
+            (audioObject.currentTime / audioObject.duration) * 100 + "%";
+        }, 1000);
+      };
+
+      $pauseIcon.onclick = function () {
+        audioObject.pause();
+        this.classList.add("hide");
+        $playIcon.classList.remove("hide");
+        clearInterval(clock);
+      };
+
+      $preIcon.onclick = function () {};
+
+      $nextIcon.onclick = function () {
+        index++;
+        if (index >= list.length) {
+          index = 0;
+        }
+        setAudio(index);
+        if (shouldPlay()) {
+          audioObject.play();
+        }
+      };
+
+      $barContainer.onclick = function (e) {
+        let rect = $barContainer.getBoundingClientRect();
+        let offsetX = e.clientX - rect.x;
+        let percent = offsetX / $barContainer.offsetWidth;
+        $bar.style.width = percent * 100 + "%";
+        audioObject.currentTime = percent * audioObject.duration;
+      };
+
+      let isDrag = false;
+      $circle.onmousedown = function () {
+        isDrag = true;
+      };
+
+      $circle.onmouseup = function () {
+        isDrag = false;
+      };
+
+      let clock2 = null; //用于优化播放拖动卡顿
+      $panel.onmousemove = function (e) {
+        if (isDrag) {
+          let rect = $barContainer.getBoundingClientRect();
+          let offsetX = e.clientX - rect.x;
+          let percent = offsetX / $barContainer.offsetWidth;
+          $bar.style.width = percent * 100 + "%";
+          if (clock2) {
+            clearTimeout();
+          }
+          clock2 =
+            (() => {
+              audioObject.currentTime = percent * audioObject.duration;
+            },
+            100);
+        }
+      };
+
+      audioObject.oncanplay = function () {
+        $total.innerText = secondToStr(this.duration);
+      };
+
+      function secondToStr(second) {
+        second = parseInt(second, 10);
+        let min = parseInt(second / 60, 10);
+        let sec = second % 60;
+        sec = sec >= 10 ? "" + sec : "0" + sec;
+        return min + ":" + sec;
+      }
+
+      function setAudio(index = 0) {
+        let currentAudio = list[index];
+        audioObject.src = currentAudio.url;
+        $title.innerText = currentAudio.title;
+        $author.innerText = currentAudio.author;
+        $cover.style.backgroundImage = `url(${currentAudio.cover})`;
+      }
+
+      function shouldPlay() {
+        return $playIcon.classList.contains("hide");
+      }
+    </script>
+  </body>
+</html>

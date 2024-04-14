@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/1.5 Arial;
+  color: #666;
+  background-color: #ebebeb;
+}
+
+.iconpark-icon {
+  width: 20px;
+  height: 20px;
+  color: #5c99ca;
+}
+
+
+#app {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  background-color: rgb(46,46,46);
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  border-radius: 50%;
+  background-color: #c1c1c1;
+  overflow: hidden;
+}
+
+header .avatar {
+  width: 80px;
+  height: 80px;
+  margin: 10px auto;
+  display: none;
+}
+
+header>h1 {
+  margin-top: 60px;
+  color: #fff;
+}
+
+header .info {
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  margin: 16px 0 20px 0;
+}
+
+header .info li {
+  margin-left: 20px;
+}
+
+#content {
+  display: flex;
+}
+
+section {
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+aside {
+  width: 240px;
+  padding: 18px;
+  background-color: #fff;
+}
+
+aside .avatar {
+  width: 160px;
+  height: 160px;
+  margin: -90px auto 20px auto;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+section .title {
+  color: #5c99ca;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+section .detail li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+}
+
+section .detail .key {
+  width: 85px;
+}
+
+section .detail a {
+  padding-left: 10px;
+  color: #5c99ca;
+}
+
+section .detail .bar {
+  flex: 1;
+  background-color: #aaa;
+}
+
+section .detail .progress {
+  display: block;
+  height: 3px;
+  background-color: #000;
+}
+
+section .detail .value {
+  margin-left: 18px;
+}
+
+main {
+  flex: 1;
+  order: 2;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  padding: 18px;
+}
+
+main ul.detail {
+  padding-left: 18px;
+}
+
+main .detail li {
+  display: list-item;
+  list-style: disc;
+}
+
+section .subtitle {
+  color: #000;
+  margin: 10px 0 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  #content {
+    flex-direction: column;
+  }
+
+  header .avatar {
+    display: block;
+  }
+
+  header>h1 {
+    margin-top: 10px;
+  }
+
+  aside .avatar {
+    display: none;
+  }
+
+  aside {
+    order: 3;
+    width: 100%;
+  }
+}

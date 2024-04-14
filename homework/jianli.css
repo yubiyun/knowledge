@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+#App {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0 100px;
+  background: #e7e5e5;
+  overflow-y: scroll;
+}
+
+header {
+  background: #333;
+  color: #fcf3f3;
+  overflow: hidden;
+}
+header .name {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 6px;
+}
+header li {
+  margin: 4px;
+}
+
+.content {
+  display: flex;
+}
+
+aside {
+  background: #fff;
+  width: 300px;
+  border-right: 1px solid;
+}
+figure {
+  width: 80px;
+  height: 80px;
+  background: gray;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: -40px auto 30px auto;
+}
+figure img {
+  width: 80px;
+  height: 80px;
+}
+section{
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+}
+section:nth-last-child(1) {
+    border-bottom: 1px solid #fff;
+}
+section .title{
+    font-size: 20px;
+    font-weight: bold;
+}
+section ul {
+  list-style: none;
+  padding: 6px;
+}
+section li {
+  display: flex;
+  align-items: center;
+}
+section .key {
+  width: 80px;
+}
+section .value {
+  margin-left: 10px;
+}
+section .range {
+  margin-left: 10px;
+  background: #999;
+  width: 100px;
+  height: 3px;
+  border-radius: 4px;
+}
+section i {
+  display: flex;
+  background: #333;
+  height: 3px;
+}
+section svg{
+    color: rgb(36, 100, 184);
+    margin-right: 6px;
+}
+
+main {
+  background: #fff;
+  flex: 1; 
+}
+main .detail{
+padding: 10px;
+}
+section .subtitle{
+font-size: 16px;
+font-weight: bold;
+color: #333;
+}
+main  li{
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 10px;
+}
+@media (max-width: 500px) {
+  .content {
+    flex-direction: column;
+  }
+  aside {
+    width: 100%;
+    order: 3;
+  }
+}

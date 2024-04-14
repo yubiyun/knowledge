@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      .navbar {
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+        list-style: none;
+        display: flex;
+        padding: 6px;
+      }
+      .menu {
+        margin: 6px;
+      }
+      .menu:hover .content{
+        display: block;
+      }
+      .content {
+        list-style: none;
+        display: none;
+        position: absolute;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+        padding: 4px;;
+      }
+      .item {
+        font-size: 14px;
+      }
+      .item:hover{
+        cursor: pointer;
+        background-color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="navbar">
+      <li class="menu">
+        菜单1
+        <ul class="content">
+          <li class="item">子项：开启新的篇章</li>
+          <li class="item">子项：序言</li>
+        </li>
+      </ul>
+
+      <li class="menu">
+        菜单2
+        <ul class="content">
+          <li class="item">子项：有什么</li>
+          <li class="item">子项：是鳄鱼</li>
+        </ul>
+    </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h2 class="tt">yby</h2>
+    <input type="text" />
+    <button class="btn-send">send</button>
+    <button class="btn-get">get</button>
+    <div>
+      <h3>history</h3>
+      <ul></ul>
+    </div>
+    <script>
+      axios.defaults.baseURL = "https://71a6-43-154-101-130.ngrok-free.app";
+
+      $SendBtn = document.querySelector(".btn-send");
+      $GetBtn = document.querySelector(".btn-get");
+
+      $GetBtn.addEventListener("click", () => {
+        console.log('[GetBtn] clicked')
+        axios.get("/").then((res) => {
+          console.log(res);
+        });
+      });
+
+      $SendBtn.addEventListener("click", () => {
+        console.log('[SendBtn] clicked')
+        axios
+          .post("/", {
+            message: "hello",
+            from: "YBY",
+            to: "LY",
+          })
+          .then((res) => {
+            console.log(res);
+          });
+      });
+    </script>
+  </body>
+</html>
